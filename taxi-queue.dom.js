@@ -22,8 +22,8 @@ function taxiPassengerStored(key) {
 joinButton.addEventListener("click", function(){
     
     taxiQueue.joinQueue();
+    passengerCount.innerHTML = taxiQueue.queueLength();
     localStorage.setItem("Passengers", taxiQueue.queueLength());
-    passengerCount.innerHTML = taxiPassengerStored("Passengers");
 });
 
 leaveButton.addEventListener("click", function(){
