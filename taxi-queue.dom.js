@@ -23,7 +23,7 @@ joinButton.addEventListener("click", function(){
     
     taxiQueue.joinQueue();
     localStorage.setItem("Passengers", taxiQueue.queueLength());
-    passengerCount.innerHTML = taxiQueue.queueLength();
+    passengerCount.innerHTML = taxiPassengerStored("Passengers");
 });
 
 leaveButton.addEventListener("click", function(){

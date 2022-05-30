@@ -57,7 +57,6 @@ describe('The taxi queue app', function() {
 		assert.equal(3, taxiQueue.taxiQueueLength());
 
 	});
-
 	// it ('should not allow the taxi queue to be less than 0', function() {
 
 	// 	const taxiQueue = TaxiQueue();

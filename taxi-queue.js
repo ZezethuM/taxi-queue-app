@@ -33,13 +33,15 @@ function TaxiQueue() {
 			taxiCounter--;
 			queCounter -= 12;	
 		}
+		return taxiCounter, queCounter;
 	}
+	
 	return {
 		joinQueue,
 		leaveQueue,
 		joinTaxiQueue,
 		queueLength,
 		taxiQueueLength,
-		taxiDepart
+		taxiDepart,
 	}
 }
