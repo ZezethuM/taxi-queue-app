@@ -1,11 +1,39 @@
 // write your DOM code here.
-
-
 // DOM element references
-
 // create Factory Function instance
+// DOM events
+
+const passengerCount = document.querySelector('.passenger_queue_count');
+const taxiCount = document.querySelector('.taxi_queue_count');
+const joinButton = document.querySelector('.join_queue');
+const leaveButton = document.querySelector('.leave_queue');
+const taxiJoinButton = document.querySelector('.join_taxi_queue');
+const departButton = document.querySelector('.depart');
 
 const taxiQueue = TaxiQueue();
 
-// DOM events
+joinButton.addEventListener("click", function(){
+    taxiQueue.joinQueue();
+    passengerCount.innerHTML = taxiQueue.queueLength();
+});
+
+leaveButton.addEventListener("click", function(){
+    passengerCount.innerHTML = taxiQueue.leaveQueue();
+});
+
+taxiJoinButton.addEventListener("click", function(){
+
+    taxiQueue.joinTaxiQueue();
+    taxiCount.innerHTML = taxiQueue.taxiQueueLength();
+
+});
+
+departButton.addEventListener("click", function(){
+
+    taxiCount.innerHTML = taxiQueue.taxiDepart();
+    passengerCount.innerHTML = taxiQueue.decrementQueue();
+
+});
+
+
 

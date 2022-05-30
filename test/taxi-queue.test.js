@@ -54,7 +54,7 @@ describe('The taxi queue app', function() {
 		taxiQueue.joinTaxiQueue();
 		taxiQueue.joinTaxiQueue();
 
-		assert.equal(3, taxi.taxiQueueLength());
+		assert.equal(3, taxiQueue.taxiQueueLength());
 
 	});
 
@@ -102,14 +102,14 @@ describe('The taxi queue app', function() {
 		taxiQueue.joinTaxiQueue();
 
 		// data before a taxi departs
-		assert.equal(3, taxiQueue.queueLength());
-		assert.equal(15, taxiQueue.queueLengthx());
+		assert.equal(3, taxiQueue.taxiQueueLength());
+		assert.equal(15, taxiQueue.queueLength());
 
 		taxiQueue.taxiDepart();
 
 		// data after a taxi departed
-		assert.equal(2, taxiQueue.queueLength());
-		assert.equal(3, taxiQueue.queueLengthx());
+		assert.equal(2, taxiQueue.taxiQueueLength());
+		assert.equal(3, taxiQueue.queueLength());
 		// assert.equal(2, taxiQueue.queueLength());
 
 	});
