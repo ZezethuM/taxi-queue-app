@@ -8,8 +8,6 @@ function TaxiQueue() {
 	}
 
 	function leaveQueue() {
-		decrementQueue(queCounter);
-		
 		if(queCounter > 0){
 			queCounter--;
 		}
@@ -31,36 +29,17 @@ function TaxiQueue() {
 	}
 
 	function taxiDepart(){
-
-		if(queCounter >= 12){
+		if(queueLength() >= 12 && taxiQueueLength() > 0){
 			taxiCounter--;
+			queCounter -= 12;	
 		}
-		return taxiCounter;
 	}
-	function decrementQueue(queCounter){
-        let newQueueCount = 0;
-		if(queCounter >= 12){
-			newQueueCount = queCounter - 12;
-		}
-		return newQueueCount;
-	}
-	// for(i = 0; i < queCounter; i++){
-	// }
-	// function decrementQueue(queCounter){
-	// 	let newQueueCount;
-	// 	while(queCounter <= 12){
-	// 		newQueueCount = queCounter - 12;
-	// 	}
-	// 	return newQueueCount;
-	// }
-
 	return {
 		joinQueue,
 		leaveQueue,
 		joinTaxiQueue,
 		queueLength,
 		taxiQueueLength,
-		taxiDepart,
-		decrementQueue
+		taxiDepart
 	}
 }

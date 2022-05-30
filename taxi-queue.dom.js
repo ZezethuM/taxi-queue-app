@@ -12,8 +12,17 @@ const departButton = document.querySelector('.depart');
 
 const taxiQueue = TaxiQueue();
 
+function taxiPassengerStored(key) {
+    	const taxiPassenger = localStorage.getItem(key);
+    	if (taxiPassenger) {
+    		return taxiPassenger;
+    	}
+    	return 0;
+    }
 joinButton.addEventListener("click", function(){
+    
     taxiQueue.joinQueue();
+    localStorage.setItem("Passengers", taxiQueue.queueLength());
     passengerCount.innerHTML = taxiQueue.queueLength();
 });
 
@@ -25,14 +34,13 @@ taxiJoinButton.addEventListener("click", function(){
 
     taxiQueue.joinTaxiQueue();
     taxiCount.innerHTML = taxiQueue.taxiQueueLength();
-
+    localStorage.setItem("Taxis", taxiQueue.taxiQueueLength())
 });
 
 departButton.addEventListener("click", function(){
 
     taxiCount.innerHTML = taxiQueue.taxiDepart();
-    passengerCount.innerHTML = taxiQueue.decrementQueue();
-
+    passengerCount.innerHTML = taxiQueue.decrementQueueLength();
 });
 
 
