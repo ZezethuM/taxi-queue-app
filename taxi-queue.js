@@ -33,7 +33,7 @@ function TaxiQueue() {
 			taxiCounter--;
 			queCounter -= 12;	
 		}
-		return taxiCounter, queCounter;
+		return taxiCounter;
 	}
 	
 	return {
