@@ -40,7 +40,7 @@ taxiJoinButton.addEventListener("click", function(){
 departButton.addEventListener("click", function(){
 
     taxiCount.innerHTML = taxiQueue.taxiDepart();
-    passengerCount.innerHTML = taxiQueue.decrementQueueLength();
+    passengerCount.innerHTML = taxiQueue.taxiDepart();
 });
 
 

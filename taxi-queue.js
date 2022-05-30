@@ -32,8 +32,9 @@ function TaxiQueue() {
 		if(queueLength() >= 12 && taxiQueueLength() > 0){
 			taxiCounter--;
 			queCounter -= 12;	
+			return taxiCounter;
 		}
-		return taxiCounter;
+		return queCounter;
 	}
 	
 	return {
